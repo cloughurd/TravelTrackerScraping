@@ -1,0 +1,17 @@
+import re
+while True:
+    subject = raw_input("subject:")
+    date = raw_input("date:")
+    input = open("input.txt", "r")
+    text = input.read()
+    input.close()
+    text = text.replace("=C2=B4", "'")
+    text = text.replace("\n\n", "\r")
+    text = text.replace("\n", "")
+    text = re.sub(r"=20\s+=20\s+", "\\n", text)
+    text = re.sub(r"(=20|=)\s*", "", text)
+    text = text.replace('"', "'")
+    text = text.replace("\r", "\n\n")
+    output = open("output.json", "a")
+    output.write('{ "subject":"' + subject + '", "dateString":"' + date + '", "content":"' + text + '"},')
+    output.close()
