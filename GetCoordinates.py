@@ -10,12 +10,12 @@ inputFileName = "InputCoordinates.txt"
 outputFileName = "OutputCoordinates.txt"
 
 # Check for optional arguments for input and output file names
-if(len(sys.argv) > 2):
-    inputFileName = sys.argv[1]
-    outputFileName = sys.argv[2]
 if(len(sys.argv) > 1):
     inputFileName = sys.argv[1]
     outputFileName = "Coordinates" + sys.argv[1]
+if(len(sys.argv) > 2):
+    inputFileName = sys.argv[1]
+    outputFileName = sys.argv[2]
 
 # Initialize coordinate search URL
 coordinateGetterUrl = "https://www.gps-coordinates.net/"
